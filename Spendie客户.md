@@ -14,9 +14,41 @@ https://spendie.atlassian.net/wiki/spaces/DEV/pages/425985/Coding+Style+Guidelin
 
 
 
+Code Styling Guide https://spendie.atlassian.net/l/c/2cxC5q1U
+
+
+
+Annouk写的设计规范（总的设计大纲）Spendie Design brief: https://spendie.atlassian.net/wiki/spaces/DEV/pages/262152/Spendie+Design+brief
+
+![Screen Shot 2022-03-23 at 22.45.43](https://raw.githubusercontent.com/letsgomelck/Picsee/main/Picsee/Screen Shot 2022-03-23 at 22.45.433WCgRI.png)
+
 ### 1.3 设计的UI/UX
 
 [**https://spendie.invisionapp.com/homepage**](https://spendie.invisionapp.com/homepage)
+
+
+
+### 1.4 Jira （Sprint在里面，Agile）
+
+https://spendie.atlassian.net/jira/software/c/projects/SP/boards/1/backlog?view=detail&selectedIssue=SP-7&issueLimit=100&atlOrigin=eyJpIjoiODBmZWJiNjFlY2NjNDFiOWI3NzFiNWYxYjI2M2I0MzciLCJwIjoiamlyYS1zbGFjay1pbnQifQ
+
+
+
+
+
+Backlog https://spendie.atlassian.net/jira/software/projects/SRP/boards/3/backlog
+
+### 1.5 Confluence
+
+（上面也有提到）Annouk写的设计规范（总的设计大纲）Spendie Design brief: https://spendie.atlassian.net/wiki/spaces/DEV/pages/262152/Spendie+Design+brief
+
+
+
+
+
+
+
+![Spendie S logo - White-02.png](https://static.wixstatic.com/media/2c7e93_259902dd7fb847ac8db491737071e03b~mv2.png/v1/fill/w_178,h_60,al_c,usm_0.66_1.00_0.01,enc_auto/Spendie S logo - White-02.png)
 
 
 
@@ -44,11 +76,19 @@ withTally是一个**分布式自治组织（****The DAO****）****http://www.wos
 
 ### 3.1 核心 Core stuff
 
-1）ETH以太坊 Ethereum是以太坊技术，ether（ETH）是以太币
+1）ETH以太坊 Ethereum是以太坊技术，ether（ETH）是以太币 https://ethereum.org/en/
 
-2）Matic/Polygon ( 第二层区块链的智能合约将被部署到）https://polygon.technology/
+2）Matic/Polygon ( the layer 2 blockchain the smart contracts will be deployed to第二层区块链的智能合约将被部署到）https://polygon.technology/
 
-3）Solidity（智能合约所用语言）https://solidity.readthedocs.io/
+
+
+We are using the Polygon network for our stable token as it is a low cost layer 2 solution. Therefore, we build smart contracts in Solidity. we use Hardhat for our development platform. it manages the ABIs and unit testing, etc. The frontend (what we have, so far) is built in Vue.js. You can see the projects on github https://gitlab.com/spendie/.
+
+![Screen Shot 2022-03-23 at 21.59.38](https://raw.githubusercontent.com/letsgomelck/Picsee/main/Picsee/Screen Shot 2022-03-23 at 21.59.38hu91gs.png)
+
+
+
+3）Solidity（language for smart contracts智能合约所用语言）https://solidity.readthedocs.io/
 
 4）Vue（前端平台）http://vuejs.org/
 
@@ -92,7 +132,7 @@ withTally是一个**分布式自治组织（****The DAO****）****http://www.wos
 
 ## 4. 项目管理工具Scrum
 
-**Jira**，为了Agile敏捷开发
+**Jira**，为了Agile敏捷开发（链接在👆）
 
 
 
@@ -160,7 +200,7 @@ Wire up贷款页面搭建
 
 
 
-# 6. 小组联系方式
+## 6. 小组联系方式
 
 ### 6.1 Mentor
 
@@ -272,7 +312,7 @@ Dr Vic Ciesielski，
 
 
 
-## 8. 课题附件
+##  8. 选课题时附件
 
 **毕业课题：Spendie** **（46）https://app.smartsheet.com/b/publish?EQBCT=4afa654d359549d5aff3320ce6db0a2a**
 
@@ -294,3 +334,176 @@ Dr Vic Ciesielski，
 
 
 
+## 9. 前端要求
+
+### 9.1 Vue.js v2
+
+用v2不用v3因为v3有问题
+
+
+
+如果React.js转过来可以看，https://dev.to/vincentntang/learning-vue-as-a-react-developer-385l
+
+
+
+![Screen Shot 2022-03-23 at 22.43.50](https://raw.githubusercontent.com/letsgomelck/Picsee/main/Picsee/Screen Shot 2022-03-23 at 22.43.50M1hh2C.png)
+
+
+
+
+
+### 9.3 Vue代码规范 from Hayden
+
+![Screen Shot 2022-03-23 at 23.01.10](https://raw.githubusercontent.com/letsgomelck/Picsee/main/Picsee/Screen Shot 2022-03-23 at 23.01.10JjmSqt.png)
+
+
+
+#### 9.3.1 This coding standard extends the official [Vue.js best practices](https://v2.vuejs.org/v2/style-guide/) and should be referred to when developing Vue-specific code.
+
+多参考https://v2.vuejs.org/v2/style-guide/
+
+
+
+#### 9.3.2  命名规则 
+
+**Vue files** should be stored under components and views.
+
+**Vue files** SHOULD be named using the PascalCase style, E.g.
+
+```
+ControlPanel.vue
+```
+
+**Vue components** SHOULD use the [MultiWord file naming convention](https://eslint.vuejs.org/rules/multi-word-component-names.html) to avoid clashes with future HTML elements, e.g. MyStuff.vue rather than Stuff.vue.
+
+Group **Vue components** when it makes sense to do so. For example, AddLiquidityPanel.vue, RemoveLiquidityPanel.vue, LiquidityStatus.vue could be grouped under a directory called “swap”.
+
+**Vue components** should not be too deeply nested. Use multiword names to describe the file:
+
+**GOOD**
+
+```
+ThisIsMightyTighty.vue
+/modals/LookinGood.vue
+```
+
+**BAD**
+
+```
+you/gotta/be/kidding/me/this/is/a/JokeRight.vue
+```
+
+
+
+#### 9.3.3 File Formatting
+
+ **Vue-based Projects**
+
+The following formatting standards MUST be applied to all text-based source files:
+
+- 2 space indent
+- 80 character max width
+- Bracket spacing, E.g. `{ "some text" }`
+- Double quotes around text, E.g. `import Something from "./path/to/somewhere";`
+- Constants MUST be UPPERCASE, E.g. `AWSCONFIG`. Underscores are optional for longer constant names, E.g. `MY_REALLY_LONG_CONSTANT`.
+- Javascript MUST be terminated with a semi-colon, E.g. `console.log("Hello World");`
+- File imports MUST use the tilde “~” symbol when importing from the project’s root. E.g. `import Something from "~/some/node/module";`
+
+In addition to the above File Formatting requirements, Javascript and Typescript files (including Vue) SHOULD use the [Semi Standard](https://github.com/standard/semistandard) coding style unless it contradicts the requirements outlined in [File Formatting](https://minertoken.atlassian.net/wiki/spaces/MT/pages/1500610565/Coding+Style+Guidelines#File-Formatting). If so, File Formatting should be the default coding style.
+
+
+
+#### 9.3.4 Nuxt管理多页面
+
+Nuxt introduces additional features for managing multi-page server side and static web sites. When working with Nuxt, the following coding rules should be followed:
+
+**Nuxt Page and Layout files** MUST be named using kebab case, e.g.
+
+```
+/pages/about.vue
+/pages/contact-us.vue
+```
+
+Sub-directories can be used to extend paths:
+
+```
+/pages/my-profile/dashboard.vue
+/pages/my-profile/stats-dashboard.vue
+```
+
+although the second example would benefit from an extended directory structure called stats, I.e.
+
+```
+/pages/my-profile/stats/dashboard.vue
+```
+
+**Nuxt Pages** SHOULD provide a base page for any pages grouped by a directory, e.g.
+
+```
+/pages/my-profile.vue
+/pages/my-profile/dashboard.vue
+/pages/my-profile/dashboard/edit.vue
+```
+
+**Nuxt Layouts** SHOULD use a simple naming convention that describes the purpose of the layout, e.g.
+
+```
+default.vue
+blog.vue
+error.vue
+my-profile.vue
+```
+
+Use a single word name (blog.vue) for the layout where possible.
+
+
+
+
+
+## 10. Development Best Practice 开发最佳范例
+
+![Screen Shot 2022-03-23 at 23.10.24](https://raw.githubusercontent.com/letsgomelck/Picsee/main/Picsee/Screen Shot 2022-03-23 at 23.10.24VLHzPS.png)
+
+### 10.1  前端还有测试还需要用到
+
+ Frontend, UI/UX Development
+
+- **Use Vue.js** for frontend development,
+- **Include Nuxt.js** for sites which are more complex than a single page application (SPA),
+- For unit testing we use **Mocha with Chai** assertions,
+- For end-to-end (e2e) testing we use **Cypress**,
+- **Use Typescript** instead of Javascript where possible. Configuration files, constants and utilities are good candidates for Typescript,
+
+
+
+### 10.2  Typescript
+
+> Typescript 代替 Javascript
+
+
+
+
+
+### 10.3 Project Configuration
+
+- Use Vue’s CLI tools to create a new Vue project (if not using Nuxt) `vue create my-project`[<img src="https://raw.githubusercontent.com/letsgomelck/Picsee/main/Picsee/favicongvdCx1.png" alt="img" style="zoom:25%;" />Creating a Project | Vue CLI](https://cli.vuejs.org/guide/creating-a-project.html) ,
+
+- If using Nuxt, use Nuxt’s app creator, `npx create-nuxt-app <project-name>`. See [![img](https://raw.githubusercontent.com/letsgomelck/Picsee/main/Picsee/icon_64x64.a3b4cejFqgvG.png)Installation](https://nuxtjs.org/docs/get-started/installation/) .
+
+
+
+### 10.4 Project Structure
+
+- Add a directory called **/utils** for supporting functions and libraries of functions (when using export const and export default). This is useful for both smart contract unit testing using Javascript and Typescript and for Vue/Nuxt sites,
+
+
+
+
+
+## 11. Managing Smart Contract Deployment
+
+### 11.1 Generating Types with Typechain
+
+需要添加 typescript-types 到 tsconfig.json来安装Typechain
+
+IDE也需要配置typescript
